@@ -1,0 +1,27 @@
+name: Ecommerce Scraper Bot
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Runs automatically every Monday at midnight
+  workflow_dispatch:      # Adds a "Run workflow" button so you can test it manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Libraries
+        run: |
+          pip install gspread oauth2client requests beautifulsoup4
+
+      - name: Run the Scraper
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }} # Pulls your secret
+        run: python scraper.py
