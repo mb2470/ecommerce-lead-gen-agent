@@ -47,7 +47,7 @@ def run_scraper():
             sheet.append_row([name, link, "Lead Found"])
             
             # Slow down to avoid being blocked by Google or the website
-            time.sleep(2) 
+            time.sleep(6) 
 
 if __name__ == "__main__":
     run_scraper()
