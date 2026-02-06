@@ -4,7 +4,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 # Load credentials from the GitHub Secret environment variable
-creds_raw = os.getenv("GOOGLE_CREDENTIALS")
+creds_raw = os.getenv("CREDENTIALS")
 creds_info = json.loads(creds_raw)
 
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
