@@ -23,5 +23,5 @@ jobs:
 
       - name: Run the Scraper
         env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }} # Pulls your secret
+          GOOGLE_CREDENTIALS: ${{ secrets.CREDENTIALS }} # Pulls your secret
         run: python scraper.py
