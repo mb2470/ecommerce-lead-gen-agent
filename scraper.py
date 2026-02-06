@@ -13,7 +13,7 @@ client = gspread.authorize(creds)
 
 # 1. CHANGE THIS to your actual Google Sheet name
 # 2. Make sure you SHARED the sheet with the client_email from your JSON!
-sheet = client.open("Your Sheet Name").sheet1
+sheet = client.open("Eccomerce Lead Gen Agent").sheet1
 
 sheet.append_row(["Final Test", "It is working!", "2026-02-05"])
 print("Success! Check your Google Sheet.")
